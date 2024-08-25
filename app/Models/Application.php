@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Application extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'company_name',
+        'url',
+    ];
+
+    public function applicationHistories()
+    {
+        return $this->hasMany(ApplicationHistory::class);
+    }
+
+}
